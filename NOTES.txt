@@ -1,0 +1,47 @@
+This project is a Node.js backend server integrated with a MySQL database to manage users, products, and purchases. It has three tables: user_details (storing user info), product_details (storing product info), and purchase_details (tracking purchases with foreign key relationships).
+Insert the datas by using user_name , product_name not by user_id , user_name
+Key features include:
+
+User Registration Endpoint: Adds users to the database.
+Product Registration Endpoint: Adds products to the database.
+Purchase Endpoint: Validates user_id and product_id, records purchases, updates product quantity, and stores user and product names in the purchase table.
+The backend uses Express.js for routing and MySQL connection pooling for efficient database interaction. Error handling and MySQL connection verification are integrated. 
+
+*** Database Name in mysql workbench : products
+
+*User Registration Endpoint: http://localhost:7000/api/register-user
+
+*method : POST 
+
+  {
+    "username": "sanjay",
+    "mob_num": "1234567890",
+    "city": "Coimbatore",
+    "state": "Tamilnadu",
+    "country": "India"
+}
+
+******************************************************************************************
+
+*Product Registration Endpoint:http://localhost:7000/api/register-product
+
+*method : POST
+
+{
+    "product_name": "Laptop",
+    "product_quantity": 50,
+    "product_price": 75000
+}
+
+
+Purchase Endpoint: http://localhost:7000/api/purchase
+
+*method : POST 
+
+{
+    "user_name": "shiju",
+    "product_name": "DELL laptop",
+    "purchase_quantity": 5
+}
+
+***********************************************************************************
